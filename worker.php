@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . 'start.php';
+require_once __DIR__ . '/start.php';
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 
 $connection = new AMQPStreamConnection('192.168.88.128', 5672, 'guest', 'guest');
