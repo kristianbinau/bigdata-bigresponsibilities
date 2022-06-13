@@ -23,7 +23,7 @@ $callback = function ($msg) {
             sleep($msg->body);
         
             echo " [x] Inserting timestamps to database...\n";
-            Capsule::table('logging_of_users')->insert(['start' => $start, 'end' => time()]);
+            Capsule::table('logging_of_timestamps')->insert(['start' => $start, 'end' => time()]);
         
             echo " [x] Done\n";
             $msg->ack();
