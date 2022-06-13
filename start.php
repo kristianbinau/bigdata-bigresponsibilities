@@ -9,7 +9,7 @@ use Illuminate\Database\Capsule\Manager as Capsule;
  $capsule->addConnection([
     "driver" => "mysql",
     "host" =>"127.0.0.1",
-    "database" => "test",
+    "database" => "bigdata",
     "username" => "root",
     "password" => "root"
  ]);
