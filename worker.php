@@ -17,13 +17,13 @@ $callback = function ($msg) {
             // Fetch and return 10 last timestamps
             break;
         default:
-            $start = time();
+            $start = new DateTime();
 
             echo ' [x] Waiting for ', $msg->body, " seconds\n";
             sleep($msg->body);
         
             echo " [x] Inserting timestamps to database...\n";
-            Capsule::table('logging_of_timestamps')->insert(['start' => $start, 'end' => time()]);
+            Capsule::table('logging_of_timestamps')->insert(['start' => $start->format('Y-m-d H:i:s'), 'end' => (new DateTime())->format('Y-m-d H:i:s')]);
         
             echo " [x] Done\n";
             $msg->ack();
