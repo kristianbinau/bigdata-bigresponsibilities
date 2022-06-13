@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/start.php';
 use PhpAmqpLib\Connection\AMQPStreamConnection;
+use Illuminate\Database\Capsule\Manager as Capsule;
 
 $connection = new AMQPStreamConnection('192.168.88.128', 5672, 'guest', 'guest');
 $channel = $connection->channel();
