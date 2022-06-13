@@ -20,7 +20,7 @@ for($i = 0 ; $i < 1000 ; $i++) {
     
     echo ' [x] Sent ', $data, "\n";
 
-    sleep(0.3);
+    usleep(300000); // 0.3s
 }
 
 
