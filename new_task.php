@@ -16,6 +16,7 @@ function shutdown(){
     global $connection, $channel;
     $channel->close();
     $connection->close();
+    die();
 };
 
 
