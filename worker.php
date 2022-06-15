@@ -11,10 +11,11 @@ $channel->queue_declare('task_queue', false, true, false, false);
 
 echo " [*] Waiting for messages. To exit press CTRL+C\n";
 
-$callback = function ($msg) {
+$callback = static function ($msg) {
     switch($msg) {
-        case '':
+        case 'last10':
             // Fetch and return 10 last timestamps
+            Capsule::table('logging_of_timestamps')->latest('end')->take(10)->get();
             break;
         default:
             $start = new DateTime();

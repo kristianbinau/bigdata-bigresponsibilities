@@ -14,7 +14,7 @@ $channel->queue_declare('task_queue', false, true, false, false);
  * Send a value between 0 and 1000000.
  */
 for($i = 0 ; $i < 10000 ; $i++) {
-    $data = rand(0, 10000);
+    $data = mt_rand(0, 10000);
 
     // Create message.
     $msg = new AMQPMessage(
