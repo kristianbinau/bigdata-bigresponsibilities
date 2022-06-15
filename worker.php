@@ -19,7 +19,7 @@ $callback = function ($msg) {
         default:
             $start = new DateTime();
 
-            echo ' [x] Waiting for ', $msg->body, " seconds\n";
+            echo ' [x] Waiting for ', $msg->body, " microseconds\n";
             usleep($msg->body);
         
             echo " [x] Inserting timestamps to database...\n";
