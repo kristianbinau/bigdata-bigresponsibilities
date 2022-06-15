@@ -12,7 +12,6 @@ $channel->queue_declare('task_queue', false, true, false, false);
 /**
  * Run 1000 times.
  * Send a value between 0 and 1000000.
- * Sleep for 0.4s.
  */
 for($i = 0 ; $i < 1000 ; $i++) {
     $data = rand(0, 1000000);
@@ -27,7 +26,6 @@ for($i = 0 ; $i < 1000 ; $i++) {
     $channel->basic_publish($msg, '', 'task_queue');
     
     echo ' [x] Sent ', $data, "\n";
-    usleep(400000); // 0.4s
 }
 
 // Close connections.
